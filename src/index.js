@@ -6,7 +6,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loginscreen from "./screens/Loginscreen";
 import Signupscreen from "./screens/Signupscreen";
@@ -18,23 +17,23 @@ const root = createRoot(container);
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
   },
   {
-    path: '/home',
+    path: "/home",
     element: <Homescreen />,
   },
   {
-    path: '/login',
+    path: "/login",
     element: <Loginscreen />,
   },
   {
-    path: '/signup',
+    path: "/signup",
     element: <Signupscreen />,
   },
   {
-    path: '/profile',
+    path: "/profile",
     element: <Profilescreen />,
   },
 ]);
