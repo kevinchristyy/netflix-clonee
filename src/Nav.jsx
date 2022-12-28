@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Nav.css";
 import Homescreen from "./screens/Homescreen";
-import Profilescreen from "./screens/Profilescreen";
 
 function Nav() {
   const [show, handleShow] = useState(false);
 
-  const navigate = useNavigate;
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/profile`;
+    navigate(path);
+  };
 
-  const navigateToProfile = () => {
-    navigate("/profile");
+  const homeRoute = () => {
+    let path = `/`;
+    navigate(path);
   };
 
   const transitionNavBar = () => {
@@ -30,18 +34,14 @@ function Nav() {
     <div className={`nav ${show && "nav__black"}`}>
       <div className="nav__contents">
         <img
-          onClick={
-            <Homescreen />
-          } /* Needs to change to a function after fixing React Router dom */
+          onClick={homeRoute}
           className="nav__logo"
           src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
           alt=""
         />
 
         <img
-          onClick={
-            <Profilescreen />
-          } /* Needs to change to a function after fixing React Router dom */
+          onClick={routeChange}
           className="nav__avatar"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt=""
